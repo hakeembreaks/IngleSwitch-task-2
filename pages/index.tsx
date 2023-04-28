@@ -1,11 +1,11 @@
-import { GetServerSideProps } from 'next'; // This function allows the page to fetch data on the server side before rendering the page.
+
 import { Grid, Card, CardContent, CardMedia, Typography } from '@mui/material';
 import { useState, useEffect } from 'react';
 import Link from "next/link"; // mports the Link component from the Next.js framework, which allows for client-side navigation between pages.
  
 
-// next line defines an asynchronous function called getServerSideProps. This function will run on the server-side before the page is rendered, and it will fetch data from the https://fakestoreapi.com/products API.
-export const getServerSideProps = async () => {
+// the next line of code defines an asynchronous function called getStaticProps that takes no arguments and is used in Next.js for pre-rendering static pages at build time.
+export const getStaticProps = async () => {
   const res = await fetch('https://fakestoreapi.com/products'); // sends a GET request to the API and returns a Response object
   const products = await res.json(); //  extracts the JSON data from the response and stores it in the products variable.
 
