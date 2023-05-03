@@ -1,6 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { Card, CardContent, CardMedia, Typography } from '@mui/material';
-import { useState, useEffect } from 'react';
 import { Button } from '@mui/material';
 
 import { useRouter } from 'next/router';
@@ -66,12 +65,7 @@ type Props = {
 };
 
 const ProductPage = ({ product }: Props) => {
-  const [isPending, setIsPending] = useState(true);
   const router = useRouter();
-
-  useEffect(() => {
-    setIsPending(false);
-  }, []);
 
 
   const handleGoBack = () => {

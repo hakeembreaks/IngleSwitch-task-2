@@ -1,6 +1,5 @@
 
 import { Grid, Card, CardContent, CardMedia, Typography } from '@mui/material';
-import { useState, useEffect } from 'react';
 import Link from "next/link"; // mports the Link component from the Next.js framework, which allows for client-side navigation between pages.
  
 
@@ -30,16 +29,10 @@ type Props = {
 };
 
 const ProductsPage = ({ products }: Props) => {
-  const [isPending, setIsPending] = useState(true);
-
-  useEffect(() => { 
-    setIsPending(false);
-    
-  }, []);
+ 
 
   return (
     <Grid container spacing={1}>
-    {isPending && <div>Loading....</div>}
     {products && products.length > 0 ? (
       products.map((product) => (
         <Grid key={product.id} item xs={12} sm={6} md={3}>
